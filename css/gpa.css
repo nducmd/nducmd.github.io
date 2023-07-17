@@ -56,5 +56,26 @@ input:focus {
   width: 75%;
 }
 .name {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
+
+select#credits {
+  border: 2px solid #555;
+	margin: auto;
+  display: block;
+	width: 60%;
+	padding: 2% 2%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border-color: #555;
+  }
+  select#grade {
+    border: 2px solid #555;
+    margin: auto;
+    display: block;
+    width: 60%;
+    padding: 2% 2%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border-color: #555;
+    }

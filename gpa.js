@@ -3,6 +3,7 @@ window.onload = function() {
 }
 
 
+
 var courseList = [];
 
 function addCourse() {
@@ -25,7 +26,7 @@ function addCourse() {
     return;
   }
   if (!courseName) {
-    courseName = courseList.length + 1;
+    courseName = "Course No. " + (courseList.length + 1);
   }
   var table = document.getElementById("courseList");
   var row = table.insertRow(-1);
@@ -120,5 +121,3 @@ function deleteCourse(row) {
   courseList.splice(index-1, 1);
   calculateGPA();
 }
-
-  

@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="" />
   <meta name="keywords" content=" "/>
-  <meta name="author" content="xoisan">
+  <meta name="author" content="nducmd">
   <meta name="robots" content="index, follow" />
 </head>
 <body>
@@ -23,12 +23,39 @@
     <div class="name">
       GPA Calculator
    </div>
+   <span style="font-size: 12px; margin-left: 15px;">Note:</span> <br>
+   <span class="note"> <strong>1. </strong> This grading system is used at PTIT</span> <br>
+   <span class="note"> <strong>2. </strong> Fill in the CREDITS and LETTER GRADE</span> <br>
+   <span class="note"> <strong>3. </strong> Optionally, you can also provide the course names</span> <br>
+   <span class="note"> <strong>4. </strong> Click on the Add(+) button to add course</span> <br>
+   <span class="note"> <strong>5. </strong> Your GPA will be automatically calculated.</span>
+   <br>
+   <br>
    <form>
-    <input type="text" id="courseName" placeholder="Course Name">
+    <input type="text" id="courseName" placeholder="Course Title">
     <br>
-    <input type="number" id="credits" onkeyup="changeTheColorOfButton()" placeholder="Credits" min="1">
+    <!--<input type="number" id="credits" onkeyup="changeTheColorOfButton()" placeholder="Credits" min="1">-->
+    <select id="credits" onchange="changeTheColorOfButton()">
+      <option value="" disabled selected>Credits</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
     <br>
-    <input type="text" id="grade" onkeyup="changeTheColorOfButton()" placeholder="Grade">
+    <!--<input type="text" id="grade" onkeyup="changeTheColorOfButton()" placeholder="Letter grade">-->
+    <select id="grade" onchange="changeTheColorOfButton()">
+      <option value="" disabled selected>Letter grade</option>
+      <option value="A+">A+</option>
+      <option value="A">A</option>
+      <option value="B+">B+</option>
+      <option value="B">B</option>
+      <option value="C+">C+</option>
+      <option value="C">C</option>
+      <option value="D+">D+</option>
+      <option value="D">D</option>
+      <option value="F">F</option>
+    </select>
     <br>
     <button id="buttonAdd" type="button" onclick="addCourse()"><i class="fa fa-plus-circle"></i></button>
     <br>
@@ -36,9 +63,9 @@
   <table id="courseList">
     <thead>
       <tr>
-        <th>Course Name</th>
+        <th>Course Title</th>
         <th>Credits</th>
-        <th>Grade</th>
+        <th>Letter grade</th>
         <th>Delete</th>
       </tr>
     </thead>
