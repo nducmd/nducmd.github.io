@@ -38,6 +38,11 @@ button {
   text-decoration: none;
 }
 
+#courseList{
+  width: 95%;
+  margin: auto;
+}
+
 #gpa {
   font-size: 1.15em;
   font-weight: bold;
@@ -46,38 +51,32 @@ button {
 }
 
 .pad {
-  padding: 2% 2%;
+  padding: 10px 10px;
   font-size: 1em;
+  
 }
 input {
   margin-left: 5%;
   width: 40%;
-  
   border: 2px solid #555;
   box-sizing: border-box;
-  transition: all 0.4s;
   border-radius: 5px;
   border-color: #555;
 }
-input:focus {
-  width: 40%;
-}
+
 .name {
   padding-bottom: 5px;
 }
 
 select#credits {
   border: 2px solid #555;
-	margin: auto;
 	width: 20%;
   box-sizing: border-box;
   border-radius: 5px;
   border-color: #555;
-  font-size: 1em;
   }
 select#grade {
   border: 2px solid #555;
-  margin: auto;
   width: 28%;
   box-sizing: border-box;
   border-radius: 5px;

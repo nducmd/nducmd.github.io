@@ -41,6 +41,10 @@ select#weight {
     margin: auto;
     display: none;
 }
+#gradeTable {
+    width: 95%;
+    margin: auto;
+}
 input {
     width: 80%;
     text-align: center;
