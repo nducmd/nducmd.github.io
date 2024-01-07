@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/FinalGrade.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <script src="script/FinalGrade.js"></script>
+    <title>Tính Điểm Tổng Kết</title>
+    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tính điểm tổng kết môn PTIT" />
+    <meta name="keywords" content=""/>
+    <meta name="author" content="nducmd">
+    <meta name="robots" content="index, follow" />
+</head>
+<body>
+
+    <div class="card animated fadeIn">
+        <div class="name">
+            Tính Điểm Tổng Kết
+        </div>
+        <br>
+        <div id="container">
+            <select id="weight" onchange="changeTheWeight()">
+                <option value="" disabled selected>Chọn trọng số</option>
+                <option value="0">10-20-20-50</option>
+                <option value="1">10-10-30-50</option>
+                <option value="2">10-10-20-60</option>
+                <option value="3">10-10-10-70</option>
+                <option value="4">10-30-60</option>
+                <option value="5">10-20-70</option>
+                <option value="6">10-10-80</option>
+            </select>
+        </div>
+        <br>
+        <table id="gradeTable">
+            <tr>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+        <br>
+    </div>
+    <!--footer-->
+    <br>
+    <footer class="animated fadeIn">
+        &copy; 2024. nducmd.
+    </footer>
+</body>
+</html>
