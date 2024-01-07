@@ -24,7 +24,7 @@
             Tính Điểm Tổng Kết
         </div>
         <br>
-        <div id="container">
+        <div id="container1">
             <select id="weight" onchange="changeTheWeight()">
                 <option value="" disabled selected>Chọn trọng số</option>
                 <option value="0">10-20-20-50</option>
@@ -45,6 +45,65 @@
                 <td></td>
             </tr>
         </table>
+        <br>
+        
+        <div id="container2">
+            <div id="toggleText" onclick="toggleTable()">Bảng quy đổi</div>
+            <br>
+            <table id="exchangeTable">
+                <tr>
+                    <th>Hệ 10</th>
+                    <th>Hệ 4</th>
+                    <th>Điểm chữ</th>
+                </tr>
+                <tr>
+                    <td>8.95 - 10.0 </td>
+                    <td>4.0</td>
+                    <td>A+</td>
+                </tr>
+                <tr>
+                    <td>8.45 - 8.94</td>
+                    <td>3.7</td>
+                    <td>A &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>7.95 - 8.44</td>
+                    <td>3.5</td>
+                    <td>B+</td>
+                </tr>
+                <tr>
+                    <td>6.95 - 7.94</td>
+                    <td>3.0</td>
+                    <td>B &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>6.45 - 6.94</td>
+                    <td>2.5</td>
+                    <td>C+</td>
+                </tr>
+                <tr>
+                    <td>5.45 - 6.44</td>
+                    <td>2.0</td>
+                    <td>C &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>4.95 - 5.44</td>
+                    <td>1.5</td>
+                    <td>D+</td>
+                </tr>
+                <tr>
+                    <td>3.95 - 4.94</td>
+                    <td>1.0</td>
+                    <td>D &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>0 - 3.94</td>
+                    <td>0.0</td>
+                    <td>F &nbsp;</td>
+                </tr>
+            </table>
+        </div>
+        
         <br>
     </div>
     <!--footer-->

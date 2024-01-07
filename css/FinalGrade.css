@@ -12,8 +12,10 @@ th, td {
 }
 th {
     background-color: #f2f2f2;
+}
+#exchangeTable th, #exchangeTable td {
+    padding: 1%;
   }
-  
 select#weight {
     border: 2px solid #555;
     margin: auto;
@@ -25,9 +27,19 @@ select#weight {
     font-size: 1em;
     text-align: center;
 }
-#container {
+#container1 {
     display: flex;
     align-items: center;
+}
+#container2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#exchangeTable {
+    width: 80%;
+    margin: auto;
+    display: none;
 }
 input {
     width: 80%;
@@ -35,4 +47,9 @@ input {
     border: none;
     outline: none;
     font-size: 1em;
+}
+#toggleText {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
 }

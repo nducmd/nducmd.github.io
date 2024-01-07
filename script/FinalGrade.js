@@ -43,7 +43,7 @@ function changeTheWeight() {
                     input.min = 0;
                     input.max = 10;
                     input.step = 'any';
-                    input.value = 0;
+                    input.value = '';
                     input.addEventListener('input', function() {
                         var idx = this.parentNode.cellIndex;
                         GradeInput[idx] = this.value;
@@ -99,3 +99,13 @@ function getCharGrade(finalGrade) {
     }
     return " (F)"
 }
+
+function toggleTable() {
+    var table = document.getElementById("exchangeTable");
+
+    if (table.style.display === "table") {
+      table.style.display = "none";
+    } else {
+      table.style.display = "table";
+    }
+  }
