@@ -18,7 +18,7 @@ button {
   cursor: pointer;
   margin: auto;
   display: block;
-  font-size: 1.15em;
+  font-size: 1em;
 }
 #buttonDel {
   border: 1px solid #555;
@@ -39,7 +39,7 @@ button {
 }
 
 #gpa {
-  font-size: 1.5em;
+  font-size: 1.15em;
   font-weight: bold;
   margin-left: 5px;
   padding-bottom: 5px;
@@ -47,7 +47,7 @@ button {
 
 .pad {
   padding: 2% 2%;
-  font-size: 1.15em;
+  font-size: 1em;
 }
 input {
   margin-left: 5%;
@@ -73,7 +73,7 @@ select#credits {
   box-sizing: border-box;
   border-radius: 5px;
   border-color: #555;
-  font-size: 1.15em;
+  font-size: 1em;
   }
 select#grade {
   border: 2px solid #555;

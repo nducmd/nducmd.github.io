@@ -8,7 +8,7 @@ th, td {
     border: 1px solid #ddd;
     padding: 2.5%;
     text-align: center;
-    font-size: 1.15em;
+    font-size: 1em;
 }
 th {
     background-color: #f2f2f2;
@@ -22,7 +22,7 @@ select#weight {
     border-radius: 5px;
     border-color: #555;
     margin-bottom: 10px;
-    font-size: 1.15em;
+    font-size: 1em;
     text-align: center;
 }
 #container {
@@ -30,8 +30,9 @@ select#weight {
     align-items: center;
 }
 input {
-    width: 100%;
+    width: 80%;
     text-align: center;
     border: none;
     outline: none;
+    font-size: 1em;
 }
