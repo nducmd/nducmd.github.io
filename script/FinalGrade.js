@@ -39,6 +39,7 @@ function changeTheWeight() {
                     var cell = document.createElement('td');
                     var input = document.createElement('input');
                     input.type = 'number';
+                    input.pattern = "[0-9]*"
                     input.name = 'cellInput';
                     input.min = 0;
                     input.max = 10;
