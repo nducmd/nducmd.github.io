@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/QrCode.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <script src="script/QrCode.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <title>Tính Điểm Tổng Kết</title>
+    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tạo mã QR code" />
+    <meta name="keywords" content=""/>
+    <meta name="author" content="nducmd">
+    <meta name="robots" content="index, follow" />
+</head>
+<body>
+
+    <div class="card animated fadeIn">
+        <div class="name">
+            Tạo mã QR code
+        </div>
+        <br>
+        <div id="container">
+            <input type="text" id="urlInput" placeholder="https://example.com">
+            <button id="generateButton" type="button" onclick="generate()">Tạo mã</i></button>
+            <div id="error-message" class="hidden">
+                URL không hợp lệ.
+            </div>
+        </div>
+        
+        <div id="qrcode"></div>
+    </div>
+    <!--footer-->
+    <footer class="custom-footer animated fadeIn">
+        &copy; 2024. nducmd.
+    </footer>
+
+    <script>
+        function generate() {
+            var url = document.getElementById("urlInput").value.trim();
+            var errorMessage = document.getElementById("error-message");
+            var qrcodeContainer = document.getElementById("qrcode");
+            var footer = document.querySelector('.custom-footer');
+            qrcodeContainer.innerHTML = "";
+            if (isValidURL(url)) {
+                var qr = new QRCode(document.getElementById("qrcode"), {
+                    text: url,
+                    width: 128,
+                    height: 128
+                });
+                urlInput.value = "";
+                errorMessage.classList.add("hidden");
+                footer.style.marginTop = '150px';
+            } else {
+                errorMessage.classList.remove("hidden");
+                footer.style.marginTop = '20px';
+            }
+        }
+        function isValidURL(url) {
+            var urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+            return urlRegex.test(url);
+        }
+    </script>
+</body>
+</html>
