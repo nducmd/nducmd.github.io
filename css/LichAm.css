@@ -1,39 +1,140 @@
 table {
-    width: 95%;
+    width: 96%;
     border-collapse: collapse;
-    border: 1px solid darkgray;
+    border: 0px solid darkgray;
     table-layout: fixed;
     margin: 5px auto;
-  }
+    background-color: rgb(241, 241, 241);
+    box-shadow: 10px 0px 10px -5px rgba(65, 65, 65, 0.2), -10px 0px 10px -5px rgba(65, 65, 65, 0.2);
+}
 th, td {
-    border: 1px solid #ddd;
+    border: 0px solid #ddd;
     padding: 1.75%;
     text-align: center;
-    font-size: 1.1em;
-}
-th {
-    background-color: #f2f2f2;
+    font-size: 1.2em;
+    border-radius: 10px;
+    
 }
 
+.tennam{
+    text-align:center;
+    font-size:150%;
+    line-height:120%;
+    font-weight:bold;
+    /* color:#eb122f; */
+    /* background-color: #CCCCCC; */
+}
+.thang {
+    font-size: '+fontSize+';
+    padding:1;
+    line-height:100%;
+    font-family:Tahoma,Verdana,Arial;
+    table-layout:fixed;
+    
+}
+/* 1/2024 */
+.tenthang {
+    text-align:center;
+    font-size:125%;
+    line-height:100%;
+    font-weight:bold;
+    color:#636262;
+    /* background-color: #E5E5E5; */
+}
+.navi-l {
+    text-align:center;
+    font-size:75%;
+    line-height:100%;
+    font-family:Verdana,Times New Roman,Arial;
+    font-weight:bold; 
+    color:rgb(46, 220, 243);
+    /* background-color: #E5E5E5; */
+}
+.navi-r {
+    text-align:center;
+    font-size:75%;
+    line-height:100%;
+    font-family:Verdana,Arial,Times New Roman;
+    font-weight:bold;
+    color:#330033;
+    /* background-color: #E5E5E5; */
+}
+/*CN T2 T3 T4 T5 T6 T7 */
+.ngaytuan {
+    width:14%;
+    text-align:center;
+    font-size:125%;
+    line-height:100%;
+    color:#7c7474;
+    /* background-color: #E5E5E5; */
+    border: none;
+}
+.ngaythang {
+    /* background-color:#F8F8F8; */
+    border: none;
+}
+.homnay{
+    border: 3px solid #21b6d4;
+}
+.tet{
+    background-color:#bef7bc;
+    border-radius: 5px;
+}
+.am {
+    text-align:center;
+    margin-top: 15%;
+    font-size:68%;
+    line-height:100%;
+    color:#636262;
+}
+.m1m15 {
+    text-align:center;
+    margin-top: 15%;
+    font-size:68%;
+    line-height:100%;
+    color:#ca0f0f;
+}
+
+/* .t2t6 {
+    text-align:left;
+    font-size:125%;
+    color:#636262;
+}
+.t7 {
+    text-align:left;
+    font-size:125%;
+    line-height:100%;
+    color:green
+}
+.cn {
+    text-align:left;
+    font-size:125%;
+    line-height:100%;
+    color:red
+} */
 select {
     border: 2px solid #555;
-    width: 80px;
     margin-left: 5px;
     box-sizing: border-box;
     border-radius: 5px;
     border-color: #555;
     font-size: 1em;
     text-align: center;
+    margin-bottom: 1%;
+    margin-top: 2%;
 }
+
 #container1 {
     display: flex;
     align-items: center;
 }
+
 #container2 {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
 input {
     border: 2px solid #555;
     width: 66px;
@@ -48,4 +149,11 @@ input {
 button {
     width: 200px;
     margin-top: 15px;
+}
+
+.todayStr{
+    margin-bottom: 5px;
+}
+#solarDay {
+    margin-top: 5px;
 }

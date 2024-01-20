@@ -335,7 +335,7 @@ function getCanChi(lunar) {
 function getDayString(lunar, solarDay, solarMonth, solarYear) {
 	var s;
 	var dayOfWeek = TUAN[(lunar.jd + 1) % 7];
-	s = dayOfWeek + " " + solarDay + "/" + solarMonth + "/" + solarYear;
+	s = dayOfWeek + ", " + solarDay + "/" + solarMonth + "/" + solarYear;
 	s += " -+- ";
 	s = s + "Ngày " + lunar.day+" tháng "+lunar.month;
 	if (lunar.leap == 1) {
@@ -349,6 +349,7 @@ function getTodayString() {
 	s += " năm " + getYearCanChi(currentLunarDate.year);
 	return s;
 }
+
 
 function getCurrentTime() {
 	today = new Date();
@@ -376,7 +377,9 @@ function getGioHoangDao(jd) {
 	return ret;
 }
 
-var DAYNAMES = new Array("CN", "T2", "T3", "T4", "T5", "T6", "T7");
+//var DAYNAMES = new Array("CN", "T2", "T3", "T4", "T5", "T6", "T7");
+//var DAYNAMES = new Array("HAI", "BA", "TƯ", "NĂM", "SÁU", "BẢY", "C.N");
+var DAYNAMES = new Array("T2", "T3", "T4", "T5", "T6", "T7", "CN");
 var PRINT_OPTS = new OutputOptions();
 var FONT_SIZES = new Array("9pt", "13pt", "17pt");
 var TAB_WIDTHS = new Array("180px", "420px", "600px");
@@ -440,21 +443,21 @@ function printStyle() {
 	var res = "";
 	res += '<style type="text/css">\n';
 	res += '<!--\n';
-	//res += '  body {margin:0}\n';
-	res += '  .tennam {text-align:center; font-size:150%; line-height:120%; font-weight:bold; color:#000000; background-color: #CCCCCC}\n';
-	res += '  .thang {font-size: '+fontSize+'; padding:1; line-height:100%; font-family:Tahoma,Verdana,Arial; table-layout:fixed}\n';
-	res += '  .tenthang {text-align:center; font-size:125%; line-height:100%; font-weight:bold; color:#330033; background-color: #CCFFCC}\n';
-	res += '  .navi-l {text-align:center; font-size:75%; line-height:100%; font-family:Verdana,Times New Roman,Arial; font-weight:bold; color:red; background-color: #CCFFCC}\n';
-	res += '  .navi-r {text-align:center; font-size:75%; line-height:100%; font-family:Verdana,Arial,Times New Roman; font-weight:bold; color:#330033; background-color: #CCFFCC}\n';
-	res += '  .ngaytuan {width:14%; text-align:center; font-size:125%; line-height:100%; color:#330033; background-color: #FFFFCC}\n';
-	res += '  .ngaythang {background-color:#FDFDF0}\n';
-	res += '  .homnay {background-color:#FFF000}\n';
-	res += '  .tet {background-color:#FFCC99}\n';
-	res += '  .am {text-align:right;font-size:75%;line-height:100%;color:blue}\n';
-	res += '  .am2 {text-align:right;font-size:75%;line-height:100%;color:#004080}\n';
-	res += '  .t2t6 {text-align:left;font-size:125%;color:black}\n';
-	res += '  .t7 {text-align:left;font-size:125%;line-height:100%;color:green}\n';
-	res += '  .cn {text-align:left;font-size:125%;line-height:100%;color:red}\n';
+	//res += '  body {border: none;}\n';
+	res += '  .tennam {}\n';
+	res += '  .thang {}\n';
+	res += '  .tenthang {}\n';
+	res += '  .navi-l {}\n';
+	res += '  .navi-r {}\n';
+	res += '  .ngaytuan {}\n';
+	res += '  .ngaythang {}\n';
+	res += '  .homnay {}\n';
+	res += '  .tet {}\n';
+	res += '  .am {}\n';
+	res += '  .am2 {}\n';
+	res += '  .t2t6 {}\n';
+	res += '  .t7 {}\n';
+	res += '  .cn {}\n';
 	res += '-->\n';
 	res += '</style>\n';
 	return res;
@@ -465,7 +468,8 @@ function printTable(mm, yy) {
 	var currentMonth = getMonth(mm, yy);
 	if (currentMonth.length == 0) return;
 	var ld1 = currentMonth[0];
-	var emptyCells = (ld1.jd + 1) % 7;
+	//var emptyCells = (ld1.jd + 1) % 7;
+    var emptyCells = (ld1.jd) % 7;
 	var MonthHead = mm + "/" + yy;
 	var LunarHead = getYearCanChi(ld1.year);
 	var res = "";
@@ -481,6 +485,12 @@ function printTable(mm, yy) {
 				solar = k - emptyCells + 1;
 				ld1 = currentMonth[k - emptyCells];
 				res += printCell(ld1, solar, mm, yy);
+                //console.log(solar, currentMonth.length);
+                if (solar == currentMonth.length) {
+                    res += ("</tr>\n");
+                    res += ('</table>\n');
+	                return res;
+                }
 			}
 		}
 		res += ("</tr>\n");
@@ -512,9 +522,17 @@ function getNextYearLink(mm, yy) {
 function printHead(mm, yy) {
 	var res = "";
 	var monthName = mm+"/"+yy;
-	res += ('<tr><td colspan="2" class="navi-l">'+getPrevYearLink(mm, yy)+' &nbsp;'+getPrevMonthLink(mm, yy)+'</td>\n');
-	res += ('<td colspan="3" class="tenthang" onclick="showMonthSelect();">'+monthName+'</td>\n');
-	res += ('<td colspan="2" class="navi-r">'+getNextMonthLink(mm, yy)+' &nbsp;'+getNextYearLink(mm, yy)+'</td></tr>\n');
+    // var monthName = mm+"/"+yy;
+	// res += ('<tr><td colspan="2" class="navi-l">'+getPrevYearLink(mm, yy)+' &nbsp;'+getPrevMonthLink(mm, yy)+'</td>\n');
+	// res += ('<td colspan="3" class="tenthang" onclick="showMonthSelect();">'+monthName+'</td>\n');
+	// res += ('<td colspan="2" class="navi-r">'+getNextMonthLink(mm, yy)+' &nbsp;'+getNextYearLink(mm, yy)+'</td></tr>\n');
+	// res += ('<tr onclick="alertAbout();">\n');
+	res += ('<tr><td colspan="2" class="navi-l">'+getPrevYearLink(mm, yy)+'</td>\n');
+	res += ('<td colspan="3" class="tenthang" onclick="showMonthSelect()">'+yy+'</td>\n');
+	res += ('<td colspan="2" class="navi-r">'+getNextYearLink(mm, yy)+'</td></tr>\n');
+    res += ('<tr><td colspan="2" class="navi-l">'+getPrevMonthLink(mm, yy)+'</td>\n');
+	res += ('<td colspan="3" class="tenthang">'+"Tháng "+mm+'</td>\n');
+	res += ('<td colspan="2" class="navi-r">'+getNextMonthLink(mm, yy)+'</td></tr>\n');
 	res += ('<tr onclick="alertAbout();">\n');
 	for(var i=0;i<=6;i++) {
 		res += ('<td class=ngaytuan>'+DAYNAMES[i]+'</td>\n');
@@ -532,7 +550,7 @@ function printCell(lunarDate, solarDate, solarMonth, solarYear) {
 	cellClass = "ngaythang";
 	solarClass = "t2t6";
 	lunarClass = "am";
-	solarColor = "black";
+	solarColor = "#121212";
 	var dow = (lunarDate.jd + 1) % 7;
 	if (dow == 0) {
 		solarClass = "cn";
@@ -546,17 +564,29 @@ function printCell(lunarDate, solarDate, solarMonth, solarYear) {
 	}
 	if (lunarDate.day == 1 && lunarDate.month == 1) {
 		cellClass = "tet";
-	}
+	} 
+    if (lunarDate.day == 1 && lunarDate.month == 1) {
+		cellClass = "tet";
+	} 
+    if (lunarDate.day == 1 || lunarDate.day == 15) {
+		lunarClass = "m1m15";
+	} 
 	if (lunarDate.leap == 1) {
-		lunarClass = "am2";
+		//lunarClass = "am2";
 	}
 	var lunar = lunarDate.day;
 	if (solarDate == 1 || lunar == 1) {
 		lunar = lunarDate.day + "/" + lunarDate.month;
+        if (lunarDate.leap == 1) {
+            lunar += "+";
+        }
 	}
 	var res = "";
 	var args = lunarDate.day + "," + lunarDate.month + "," + lunarDate.year + "," + lunarDate.leap;
 	args += ("," + lunarDate.jd + "," + solarDate + "," + solarMonth + "," + solarYear);
+    // if (cellClass == "homnay") {
+    //     console.log(args);
+    // }
 	res += ('<td class="'+cellClass+'"');
 	if (lunarDate != null) res += (' title="'+getDayName(lunarDate)+'" onclick="alertDayInfo('+args+');"');
 	res += (' <div style=color:'+solarColor+' class="'+solarClass+'">'+solarDate+'</div> <div class="'+lunarClass+'">'+lunar+'</div></td>\n');
@@ -572,10 +602,14 @@ function printFoot() {
 function showMonthSelect() {
 	//var home = "http://www.informatik.uni-leipzig.de/~duc/amlich/JavaScript/";
 	//window.open(home, "win2702", "menubar=yes,scrollbars=yes,status=yes,toolbar=yes,resizable=yes,location=yes");
+    //viewYear(parseInt(year.value));
+    getSelectedMonth();
+    var loc = 'LichAmNam.html?yy='+document.SelectMonth.year.value;
+    var nducmd = window.open(loc, "nducmd", "menubar=yes,scrollbars=yes,resizable=yes");
 }
 
 function showYearSelect() {
-	window.print();
+	//window.print();
 }
 
 function infoCellSelect(id) {

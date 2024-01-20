@@ -23,16 +23,15 @@
         <div class="name">
             Lịch Âm
         </div>
-        <br>
-        <script>
-            document.writeln(printSelectedMonth());
-        </script>
-        <br>
+        <div id="container2">
+            <div class="todayStr" id="solarDay"></div>
+            <div class="todayStr" id="lunarDay"></div>
+        </div>
         <form name="SelectMonth" action="">
             <div id="container2">
                 <div id="container1">
-                    Th&aacute;ng
-                    <select name="month">
+                    <label for="month-select">Tháng</label>
+                    <select name="month" id="month-select" onchange="viewMonth(parseInt(month.value), parseInt(year.value))">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -46,14 +45,15 @@
                         <option value="11">11</option>
                         <option value="12">12</option>
                     </select> &#160;&#160;
-                    N&#x103;m 
-                    <select name="year" id="year-select"></select>
+                    <label for="year-select">Năm</label>
+                    <select name="year" id="year-select" onchange="viewMonth(parseInt(month.value), parseInt(year.value))"></select>
                 </div>
-                <button type="button" onclick="javascript:viewMonth(parseInt(month.value), parseInt(year.value));">Xem l&#x1ECB;ch th&aacute;ng</button>
-                <button type="button" onclick="javascript:viewYear(parseInt(year.value));">Xem l&#x1ECB;ch n&#x0103;m</button>
-                <br>
             </div>
         </form>
+        <script>
+            document.writeln(printSelectedMonth());
+        </script>
+        <br>
         <script>
             getSelectedMonth();
             var yearSelect = document.getElementById('year-select');
@@ -65,14 +65,14 @@
             }
             document.SelectMonth.month.value = currentMonth;
             document.SelectMonth.year.value = currentYear;
-
+            var todayString  = getTodayString().split("-+-");
+            var solarDay = document.getElementById("solarDay");
+            solarDay.innerHTML = todayString[0].trim();
+            var lunarDay = document.getElementById("lunarDay");
+            lunarDay.innerHTML = todayString[1].trim();
             function viewMonth(mm, yy) {
                 //window.location = window.location.pathname + '?yy='+yy+'&mm='+mm;
                 window.location.href = window.location.pathname + '?yy='+yy+'&mm='+mm;
-            }
-            function viewYear(yy) {
-                var loc = 'https://www.informatik.uni-leipzig.de/~duc/amlich/JavaScript/currentyear.html?yy='+yy;
-                var win2702 = window.open(loc, "win2702", "menubar=yes,scrollbars=yes,resizable=yes");
             }
         </script>
     </div>
