@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <script src="script/FinalGrade.js"></script>
+    <script src="script/LichAm.js"></script>
     <title>Lịch Âm</title>
     <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
@@ -18,57 +18,58 @@
     <meta name="robots" content="index, follow" />
 </head>
 <body>
+
     <div class="card animated fadeIn">
         <div class="name">
             Lịch Âm
         </div>
         <br>
-        <script type="text/javascript" language="JavaScript" src="http://www.informatik.uni-leipzig.de/~duc/amlich/JavaScript/amlich-hnd.js">
+        <script>
+            document.writeln(printSelectedMonth());
         </script>
-            <script language="JavaScript">
-                document.writeln(printSelectedMonth());
-            </script>
-            <br>
-            <form name="SelectMonth" action="">
-                <div id="container2">
-                    <div id="container1">
-                        Th&aacute;ng
-                        <select name="month">
-                        <option value="1">1
-                        <option value="2">2
-                        <option value="3">3
-                        <option value="4">4
-                        <option value="5">5
-                        <option value="6">6
-                        <option value="7">7
-                        <option value="8">8
-                        <option value="9">9
-                        <option value="10">10
-                        <option value="11">11
-                        <option value="12">12
-                        </select> &#160;&#160;
-                        N&#x103;m 
-                        <input name="year" size=4 value="2024"> &#160;
-                    </div>
-                    <button onClick="javascript:viewMonth(parseInt(month.value), parseInt(year.value));">Xem l&#x1ECB;ch th&aacute;ng</button>
-                    <button onClick="javascript:viewYear(parseInt(year.value));">Xem l&#x1ECB;ch n&#x0103;m</button>
-                    <br>
+        <br>
+        <form name="SelectMonth" action="">
+            <div id="container2">
+                <div id="container1">
+                    Th&aacute;ng
+                    <select name="month">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select> &#160;&#160;
+                    N&#x103;m 
+                    <input name="year" size="4" value="2024"> &#160;
                 </div>
-               
-            </form>
-            <script type="text/javascript">
-                getSelectedMonth();
-                document.SelectMonth.month.value = currentMonth;
-                document.SelectMonth.year.value = currentYear;
-                function viewMonth(mm, yy) {
-                    window.location = window.location.pathname + '?yy='+yy+'&mm='+mm;
-                }
-                function viewYear(yy) {
-                    var loc = 'currentyear.html?yy='+yy;
-                    var win2702 = window.open(loc, "win2702", "menubar=yes,scrollbars=yes,resizable=yes");
-                }
-            </script>
+                <button type="button" onclick="javascript:viewMonth(parseInt(month.value), parseInt(year.value));">Xem l&#x1ECB;ch th&aacute;ng</button>
+                <button type="button" onclick="javascript:viewYear(parseInt(year.value));">Xem l&#x1ECB;ch n&#x0103;m</button>
+                <br>
+            </div>
+        </form>
+        <script>
+            getSelectedMonth();
+            document.SelectMonth.month.value = currentMonth;
+            document.SelectMonth.year.value = currentYear;
+            function viewMonth(mm, yy) {
+                //window.location = window.location.pathname + '?yy='+yy+'&mm='+mm;
+                window.location.href = window.location.pathname + '?yy='+yy+'&mm='+mm;
+            }
+            function viewYear(yy) {
+                var loc = 'https://www.informatik.uni-leipzig.de/~duc/amlich/JavaScript/currentyear.html?yy='+yy;
+                var win2702 = window.open(loc, "win2702", "menubar=yes,scrollbars=yes,resizable=yes");
+        
+            }
+        </script>
     </div>
     <br> <br>
+    
 </body>
 </html>
