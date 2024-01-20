@@ -13,7 +13,6 @@ th, td {
     text-align: center;
     font-size: 1.2em;
     border-radius: 10px;
-    
 }
 
 .tennam{
@@ -43,7 +42,7 @@ th, td {
 }
 .navi-l {
     text-align:center;
-    font-size:75%;
+    font-size:0%;
     line-height:100%;
     font-family:Verdana,Times New Roman,Arial;
     font-weight:bold; 
@@ -52,7 +51,7 @@ th, td {
 }
 .navi-r {
     text-align:center;
-    font-size:75%;
+    font-size:0%;
     line-height:100%;
     font-family:Verdana,Arial,Times New Roman;
     font-weight:bold;
@@ -156,4 +155,64 @@ button {
 }
 #solarDay {
     margin-top: 5px;
+}
+
+@media screen and (min-width: 1001px) {
+}
+@media (min-width: 100px) and (max-width: 728px) and (orientation:portrait) {
+    /* 1/2024 */
+    .tenthang {
+        font-size:40%;
+        line-height:100%;
+    }
+    /*CN T2 T3 T4 T5 T6 T7 */
+    .ngaytuan {
+        width:7%;
+        font-size:50%;
+        line-height:100%;
+    }
+    th, td {
+        padding: 0.5%;
+        font-size: 0.6em;
+    }
+    .homnay{
+        border: 1px solid #21b6d4;
+    }
+}
+
+@media (min-width: 100px) and (max-width: 728px) and (orientation:landscape) {
+    .tenthang {
+        font-size:80%;
+        line-height:100%;
+    }
+    .ngaytuan {
+        width:12%;
+        font-size:80%;
+        line-height:100%;
+    }
+    th, td {
+        padding: 0.8%;
+        font-size: 0.7em;
+    }
+    .homnay{
+        border: 1px solid #21b6d4;
+    }
+}
+@media only screen and (min-width: 728px) and (max-width: 1000px) {
+    .tenthang {
+        font-size:90%;
+        line-height:100%;
+    }
+    .ngaytuan {
+        width:12%;
+        font-size:90%;
+        line-height:100%;
+    }
+    th, td {
+        padding: 1%;
+        font-size: 0.85em;
+    }
+    .homnay{
+        border: 2px solid #21b6d4;
+    }
 }
