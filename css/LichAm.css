@@ -147,8 +147,7 @@ input {
 }
 
 button {
-    width: 200px;
-    margin-top: 15px;
+    margin-left: 5px;
 }
 
 .todayStr{

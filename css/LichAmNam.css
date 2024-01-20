@@ -111,51 +111,7 @@ th, td {
     line-height:100%;
     color:red
 } */
-select {
-    border: 2px solid #555;
-    margin-left: 5px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border-color: #555;
-    font-size: 1em;
-    text-align: center;
-    margin-bottom: 1%;
-    margin-top: 2%;
-}
 
-#container1 {
-    display: flex;
-    align-items: center;
-}
-
-#container2 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-input {
-    border: 2px solid #555;
-    width: 66px;
-    margin-left: 5px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border-color: #555;
-    font-size: 1em;
-    text-align: center;
-}
-
-button {
-    width: 200px;
-    margin-top: 15px;
-}
-
-.todayStr{
-    margin-bottom: 5px;
-}
-#solarDay {
-    margin-top: 5px;
-}
 
 @media screen and (min-width: 1001px) {
 }

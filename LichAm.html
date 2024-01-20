@@ -47,6 +47,7 @@
                     </select> &#160;&#160;
                     <label for="year-select">Năm</label>
                     <select name="year" id="year-select" onchange="viewMonth(parseInt(month.value), parseInt(year.value))"></select>
+                    <button type="button" onclick="viewYear(parseInt(year.value));"> ↗</button>
                 </div>
             </div>
         </form>
@@ -74,6 +75,11 @@
                 //window.location = window.location.pathname + '?yy='+yy+'&mm='+mm;
                 window.location.href = window.location.pathname + '?yy='+yy+'&mm='+mm;
             }
+            function viewYear(yy) {
+                var loc = 'LichAmNam.html?yy=' + yy;
+                var nducmd = window.open(loc, "nducmd", "menubar=yes,scrollbars=yes,resizable=yes");
+            }
+    
         </script>
     </div>
     <br> <br>
