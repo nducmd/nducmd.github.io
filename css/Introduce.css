@@ -9,12 +9,12 @@ body {
 }
 
 .card {
-    margin-left: 27.5%;
+    margin-left: 20%;
     margin-top: 5%;
     padding: 0px;
     background-color: white;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
-    width: 50%;
+    width: 60%;
 }
 
 .card:hover {
@@ -63,3 +63,27 @@ ul {
 animation-name: fadeIn;
 }
 
+
+@media screen and (min-width: 1001px) {
+}
+@media (min-width: 100px) and (max-width: 728px) and (orientation:portrait) {
+    .card {
+        margin-left: 1%;
+        width: 98%;
+    }
+}
+
+@media (min-width: 100px) and (max-width: 728px) and (orientation:landscape) {
+    .card {
+        margin-top: 2%;
+        margin-left: 1%;
+        width: 98%;
+    }
+}
+@media only screen and (min-width: 728px) and (max-width: 1000px) {
+    .card {
+        margin-top: 3%;
+        margin-left: 10%;
+        width: 80%;
+    }
+}
