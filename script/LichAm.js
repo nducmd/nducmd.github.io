@@ -604,7 +604,7 @@ function showMonthSelect() {
 	//window.open(home, "win2702", "menubar=yes,scrollbars=yes,status=yes,toolbar=yes,resizable=yes,location=yes");
     //viewYear(parseInt(year.value));
     // getSelectedMonth();
-    // var loc = 'LichAmNam.html?yy='+document.SelectMonth.year.value;
+    // var loc = 'LichAmNam?yy='+document.SelectMonth.year.value;
     // var nducmd = window.open(loc, "nducmd", "menubar=yes,scrollbars=yes,resizable=yes");
 }
 
