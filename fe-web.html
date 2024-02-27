@@ -51,27 +51,31 @@
                     </label>
                 </div>
                 <div class="register" id="register" style="display: none;">
-                    <label for="register-input-user" class="login__label">
+                    <label for="username" class="login__label">
                         Tên đăng nhập
                     </label>
-                    <input id="register-input-user" class="login__input" type="text" />
-                    <label for="register-input-user" class="login__label">
+                    <input id="username" class="login__input" type="text" /><br>
+                    <span id="usernameError" class="error"></span><br>
+                    <label for="email" class="login__label">
                         Email
                     </label>
-                    <input id="register-input-user" class="login__input" type="text" />
-                    <label for="register-input-password" class="login__label">
+                    <input id="email" class="login__input" type="text" /><br>
+                    <span id="emailError" class="error"></span><br>
+                    <label for="password" class="login__label">
                         Mật khẩu
                     </label>
-                    <input id="register-input-password" class="login__input" type="password" />
-                    <label for="register-input-password" class="login__label">
+                    <input id="password" class="login__input" type="password" /><br>
+                    <span id="passwordError" class="error"></span><br>
+                    <label for="rePassword" class="login__label">
                         Xác nhận mật khẩu
                     </label>
-                    <input id="register-input-password" class="login__input" type="password" />
+                    <input id="rePassword" class="login__input" type="password" /><br>
+                    <span id="rePasswordError" class="error"></span><br>
                     <div class="space">
 
                     </div>
                 </div>
-                <button class="login__submit" disabled>Tiếp tục</button>
+                <button class="login__submit" onclick="validateForm()">Tiếp tục</button>
             </form>
         </div>
     </main>
