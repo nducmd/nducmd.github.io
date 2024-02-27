@@ -83,7 +83,7 @@ function showResult(event) {
             correctAnswers.push(i);
         }
     }
-    
+    document.getElementById("result").style.display = "block";
     let correctAnswersString = "Các câu đúng là: ";
     correctAnswers.forEach((answer, index) => {
         if (index !== 0) {
