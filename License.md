@@ -1,8 +1,9 @@
-This project is based on code from the repository github-react-portfolio-template by Michael Huber.
-Modifications and customizations have been made by Duc Minh Nguyen.
+This project is based on code from the repository github-react-portfolio-template by Michael Huber.\
+Modifications and customizations have been made by Duc Minh Nguyen.\
 The original code is licensed under the MIT License as shown below.
 
 --- Original License Follows ---
+
 The MIT License (MIT)
 Copyright (c) 2020 Michael Huber
 
